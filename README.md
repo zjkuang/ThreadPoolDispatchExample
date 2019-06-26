@@ -1,7 +1,9 @@
 # ThreadPoolDispatchExample
 In this example, a dispatcher is implemented to provide an iOS-like async-dispatch method.
 
-Usage is very simple, as find in MainActivity's onStart(),
+Under the hood, the dispatcher creates a work queue using as many cores available to maximize the concurrency. ThreadPoolExecutor is employed to dispatch the block to the thread allocated from the pool.
+
+Usage is very simple, as find in the project's MainActivity onStart(),
 
     ThreadPoolDispatcher.dispatch(block = { resultReceiver ->
     
